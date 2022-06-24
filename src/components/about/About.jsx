@@ -18,15 +18,15 @@ import ReactDOM from 'react-dom';
 const data = [
   {
     index: 1,
-    icon: '<FaAward className="about__icon"/>',
+    degree: '<FaAward className="about__icon"/>',
     name: 'Bachelor of Science - Computer Science',
     detail: 'University of Illinois at Chicago'
   },
   {
     index: 2,
-    icon: '<FaHospitalAlt className="about__icon"/>',
+    experience: '<FaHospitalAlt className="about__icon"/>',
     name: 'Experience',
-    detail: '4+ year programming'
+    detail: '6+ year programming'
   }
   // {
   //   index: 3,
@@ -60,11 +60,13 @@ const About = () => {
           slidesPerView={1}
         >
           {
-            data.map(({icon, name, detail}, index) => {
+            data.map(({degree, experience, name, detail}, index) => {
               const IconTag = React.createElement("FaAward", {className: "about__icon"});
               console.log(IconTag)
               return (
                 <SwiperSlide id={name} key={index} className="about__card">
+                  {degree && <FaAward className="about__icon"/>}
+                  {experience && <FaHospitalAlt className="about__icon"/>}
                   <h5>{name}</h5>
                   <small>{detail}</small>
                 </SwiperSlide>

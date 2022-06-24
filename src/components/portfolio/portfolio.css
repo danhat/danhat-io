@@ -15,16 +15,16 @@
   padding: 1.3rem;
   border-radius: var(--border-radius);
   border: 1px solid transparent;
-  transition: var(--transition);
+  /* transition: var(--transition);
   transform-origin: center center;
-  filter: var(--dim);
+  filter: var(--dim); */
   text-align: center;
 }
 
-.portfolio__item:hover {
+/* .portfolio__item:hover {
   filter: var(--brighten);
   transform: var(--scale);
-}
+} */
 
 .portfolio__item-image {
   border-radius: var(--border-radius);

@@ -48,7 +48,7 @@ const backend_data = [
   {
     id: 3,
     name: 'Scala',
-    level: 'Experienced'
+    level: 'Intermediate'
   },
   {
     id: 4,

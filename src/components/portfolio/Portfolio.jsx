@@ -4,8 +4,7 @@ import './portfolio.css'
 import GIF15 from '../../assets/15puzzle.gif'
 import PLACEHOLDERIMG from '../../assets/placeholder-image.png'
 import TWEETSIMG from '../../assets/twitter.png'
-import YELPIMG from '../../assets/yelp.png'
-
+import HUFFMANGIF from '../../assets/huffman.gif'
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,7 +32,7 @@ const projects = [
   },
   {
     id: 3,
-    image: PLACEHOLDERIMG,
+    image: HUFFMANGIF,
     title: "Huffman Coding",
     github: "https://github.com/danhat/HuffmanCoding"
   },
@@ -43,13 +42,6 @@ const projects = [
     title: "Classifying Tweets",
     github: "https://github.com/danhat/classifying_tweets",
     notebook: "https://github.com/danhat/classifying_tweets/blob/main/tweets.ipynb"
-  },
-  {
-    id: 5,
-    image: YELPIMG,
-    title: "Yelp Search",
-    github: "https://github/danhat/yelp_search",
-    notebook: "https://github.com/danhat/yelp_search/blob/main/yelp_search.ipynb"
   }
 ]
 
@@ -90,7 +82,7 @@ const Portfolio = () => {
                 </div>
                 <h3>{title}</h3>
                 <div className="portfolio__item-cta">
-                  <a href={github} className="btn" target="_blank" rel="noreferrer">Github</a>
+                  <a href={github} className="btn btn-primary" target="_blank" rel="noreferrer">Github</a>
                   {demo && <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">Live Demo</a>}
                   {notebook && <a href={notebook} className="btn btn-primary" target="_blank" rel="noreferrer">Jupyter Notebook</a>}
                   {/* <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">
