@@ -1,0 +1,60 @@
+.container.contact__container {
+  width: 58%;
+  display: grid;
+  /* grid-template-columns: 30% 58%; */
+  gap: 12%;
+}
+
+.container.contact__container button {
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background: transparent;
+  border: 2px solid var(--color-primary-variant);
+  resize: none;
+}
+
+
+
+
+/*** media quieries (medium devices) ***/
+@media screen and (max-width: 1024px) {
+  .container.contact__container {
+    /* grid-template-columns: 1fr;
+    gap: 2rem; */
+    width: var(--container-width-md);
+  }
+}
+
+/*** media quieries (small devices) ***/
+@media screen and (max-width: 600px) {
+  .container.contact__container {
+    width: var(--container-width-sm);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
