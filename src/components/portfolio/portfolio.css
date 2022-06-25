@@ -8,6 +8,10 @@
   padding-bottom: 3rem;
 }
 
+.portfolio__container > div h3 {
+  text-decoration: underline;
+}
+
 
 
 .portfolio__item {

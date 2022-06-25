@@ -4,66 +4,50 @@ import './experience.css'
 const frontend_data = [
   {
     id: 1,
-    name: 'HTML',
-    level: 'Experienced'
+    name: 'HTML'
   },
   {
     id: 2,
-    name: 'CSS',
-    level: 'Experienced'
+    name: 'CSS'
   },
   {
     id: 3,
-    name: 'JavaScript',
-    level: 'Experienced'
+    name: 'JavaScript'
   },
   {
     id: 4,
-    name: 'React',
-    level: 'Experienced'
+    name: 'React'
   },
   {
     id: 5,
-    name: 'Bootstrap',
-    level: 'Experienced'
+    name: 'Bootstrap'
   },
   {
     id: 6,
-    name: 'Angular',
-    level: 'Intermediate'
+    name: 'Angular'
   }
 ]
 
 const backend_data = [
   {
     id: 1,
-    name: 'Python',
-    level: 'Experienced'
+    name: 'Python'
   },
   {
     id: 2,
-    name: 'Java',
-    level: 'Experienced'
+    name: 'Java'
   },
   {
     id: 3,
-    name: 'Scala',
-    level: 'Intermediate'
+    name: 'Scala'
   },
   {
     id: 4,
-    name: 'Node JS',
-    level: 'Experienced'
-  },
-  {
-    id: 5,
-    name: 'PHP',
-    level: 'Intermediate'
+    name: 'Node JS'
   },
   {
     id: 6,
-    name: 'MySQL',
-    level: 'Intermediate'
+    name: 'MySQL'
   }
 ]
 

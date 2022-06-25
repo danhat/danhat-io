@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import './contact.css'
 // import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
-// import emailData from '../../email.json'
 
 
 const Contact = () => {
@@ -11,9 +10,8 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // emailjs.sendForm(emailData.SERVICE_ID, emailData.TEMPLATE_ID, form.current, emailData.PUBLIC_KEY);
 
-    emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY);
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY);
 
     alert('Message sent.')
     e.target.reset();
