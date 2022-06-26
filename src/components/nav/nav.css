@@ -1,4 +1,4 @@
-nav {
+/* nav {
   background: rgba(0, 0, 0, 0.2);
   width: max-content;
   display: block;
@@ -32,10 +32,124 @@ nav a.active {
   background: var(--color-primary);
   color: var(--color-white);
   border: 2px solid var(--color-bg-variant);
+} */
+
+
+/* nav {
+  width: 100%; 
+  position: fixed;
+  float: right !important;
+} */
+
+nav {
+  background-color: var(--color-bg);
+  position: fixed;
+  height: 6rem;
+  width: 100%;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+  -webkit-transition:height 200ms ease-in;
+  -moz-transition:height 200ms ease-in;
+  -o-transition:height 200ms ease-in;
+  transition:height 200ms ease-in;
+}
+
+nav a {
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: var(--color-bg-variant);
+}
+
+.navColorChange {
+  background-color: var(--color-primary);
+  height: 5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  -webkit-transition:height 200ms ease-in;
+  -moz-transition:height 200ms ease-in;
+  -o-transition:height 200ms ease-in;
+  transition:height 200ms ease-in;
+}
+
+.navColorChange a {
+  color: var(--color-bg);
+}
+
+.navColorChange a:hover {
+  color: var(--color-light);
+  cursor: pointer;
+}
+
+.navColorChange a.active {
+  color: var(--color-bg-variant);
 }
 
 
+@media screen and (max-width: 600px) {
+  nav {
+    background: rgba(0, 0, 0, 0.2);
+    width: max-content;
+    display: block;
+    height: 4.5rem;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(15px);
+  }
+  
+  nav a {
+    background: transparent;
+    padding: 0.9rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    color: var(--color-white);
+    font-size: 1.1rem;
+  }
+  
+  nav a:hover {
+    background: var(--color-light);
+    border: 2px solid var(--color-bg-variant);
+  }
+  
+  nav a.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-bg-variant);
+  }
 
+  .navColorChange {
+    background: rgba(0, 0, 0, 0.2);
+    height: 5rem;
+  }
+  
+  .navColorChange a {
+    color: var(--color-white);
+  }
+
+  .navColorChange a:hover {
+    color: var(--color-bg-variant);
+  }
+  
+  .navColorChange a.active {
+    color: var(--color-white);
+  }
+}
 
 
 

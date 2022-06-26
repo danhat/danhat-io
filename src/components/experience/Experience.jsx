@@ -35,14 +35,18 @@ const backend_data = [
   },
   {
     id: 2,
-    name: 'Java'
+    name: 'Django'
   },
   {
     id: 3,
-    name: 'Scala'
+    name: 'Java'
   },
   {
     id: 4,
+    name: 'Scala'
+  },
+  {
+    id: 5,
     name: 'Node JS'
   },
   {

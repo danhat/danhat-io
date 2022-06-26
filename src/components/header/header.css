@@ -1,6 +1,9 @@
+
+
+
 header {
-  height: 100 vh;
-  padding-top: 7rem;
+  /* height: 100vh; */
+  padding-top: 12rem;
   overflow: hidden;
 }
 
@@ -50,15 +53,7 @@ header {
   overflow: hidden;
 }
 
-/** scroll down **/
-.scroll__down {
-  position: absolute;
-  right: -2.3rem;
-  bottom: 5rem;
-  transform: rotate(90deg);
-  font-weight: 300;
-  font-size: 0.9rem;
-}
+
 
 
 /*** media quieries (medium devices) ***/
