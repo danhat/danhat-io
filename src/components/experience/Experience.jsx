@@ -1,61 +1,30 @@
 import React from 'react'
 import './experience.css'
 
-const frontend_data = [
-  {
-    id: 1,
-    name: 'HTML'
-  },
-  {
-    id: 2,
-    name: 'CSS'
-  },
-  {
-    id: 3,
-    name: 'JavaScript'
-  },
-  {
-    id: 4,
-    name: 'React'
-  },
-  {
-    id: 5,
-    name: 'Bootstrap'
-  },
-  {
-    id: 6,
-    name: 'Angular'
-  }
-]
+import {useQuery, gql} from '@apollo/client'
 
-const backend_data = [
-  {
-    id: 1,
-    name: 'Python'
-  },
-  {
-    id: 2,
-    name: 'Django'
-  },
-  {
-    id: 3,
-    name: 'Java'
-  },
-  {
-    id: 4,
-    name: 'Scala'
-  },
-  {
-    id: 5,
-    name: 'Node JS'
-  },
-  {
-    id: 6,
-    name: 'MySQL'
+
+
+const GET_SKILLS = gql`
+  query GetSkills {
+    skills {
+      name
+      importance
+      type
+    }
   }
-]
+`
+
 
 const Experience = () => {
+  const { loading, error, data } = useQuery(GET_SKILLS);
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error</p>;
+
+
+
   return (
     <section id="experience">
       
@@ -68,15 +37,16 @@ const Experience = () => {
 
           <div className="experience__content">
             {
-              frontend_data.map(({id, name, level}) => {
-                return (
-                  <article className="experience__details">
-                    <div>
-                      <h4>{name}</h4>
-                      <small className="text-dark">{level}</small>
-                    </div>
-                  </article>
-                )
+              data.skills.map(({id, name, importance, skillType}) => {
+                if (type == 'frontend') {
+                  return (
+                    <article className="experience__details">
+                      <div>
+                        <h4>{name}</h4>
+                      </div>
+                    </article>
+                  )
+                }
               })
             }
             
@@ -88,15 +58,16 @@ const Experience = () => {
         <h3>Backend Development</h3>
           <div className="experience__content">
             {
-              backend_data.map(({id, name, level}) => {
-                return (
-                  <article className="experience__details">
-                    <div>
-                      <h4>{name}</h4>
-                      <small className="text-dark">{level}</small>
-                    </div>
-                  </article>
-                )
+              data.skills.map(({id, name, importance, skillType}) => {
+                if (type == 'backend') {
+                  return (
+                    <article className="experience__details">
+                      <div>
+                        <h4>{name}</h4>
+                      </div>
+                    </article>
+                  )
+                }
               })
             }
           </div>
