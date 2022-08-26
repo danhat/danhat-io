@@ -38,7 +38,7 @@ const Experience = () => {
           <div className="experience__content">
             {
               data.skills.map(({id, name, importance, skillType}) => {
-                if (type == 'frontend') {
+                if (skillType == 'frontend') {
                   return (
                     <article className="experience__details">
                       <div>
@@ -59,7 +59,7 @@ const Experience = () => {
           <div className="experience__content">
             {
               data.skills.map(({id, name, importance, skillType}) => {
-                if (type == 'backend') {
+                if (skillType == 'backend') {
                   return (
                     <article className="experience__details">
                       <div>
