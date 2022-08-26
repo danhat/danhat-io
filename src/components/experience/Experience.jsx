@@ -10,7 +10,7 @@ const GET_SKILLS = gql`
     skills {
       name
       importance
-      type
+      skillType
     }
   }
 `
@@ -22,7 +22,6 @@ const Experience = () => {
   if (loading) return <p>Loading...</p>;
 
   if (error) return <p>Error</p>;
-
 
 
   return (
@@ -37,16 +36,14 @@ const Experience = () => {
 
           <div className="experience__content">
             {
-              data.skills.map(({id, name, importance, skillType}) => {
-                if (skillType == 'frontend') {
-                  return (
-                    <article className="experience__details">
-                      <div>
-                        <h4>{name}</h4>
-                      </div>
-                    </article>
-                  )
-                }
+              data.skills.filter(skill => skill.skillType === 'frontend').map(filteredSkill => {
+                return (
+                  <article className="experience__details">
+                    <div>
+                      <h4>{filteredSkill.name}</h4>
+                    </div>
+                  </article>
+                )
               })
             }
             
@@ -58,16 +55,14 @@ const Experience = () => {
         <h3>Backend Development</h3>
           <div className="experience__content">
             {
-              data.skills.map(({id, name, importance, skillType}) => {
-                if (skillType == 'backend') {
-                  return (
-                    <article className="experience__details">
-                      <div>
-                        <h4>{name}</h4>
-                      </div>
-                    </article>
-                  )
-                }
+              data.skills.filter(skill => skill.skillType === 'backend').map(filteredSkill => {
+                return (
+                  <article className="experience__details">
+                    <div>
+                      <h4>{filteredSkill.name}</h4>
+                    </div>
+                  </article>
+                )
               })
             }
           </div>
