@@ -32,11 +32,13 @@ const Experience = () => {
 
       <div className="container experience__container">
         <div className="experience__frontend">
-          <h3>Frontend Development</h3>
+          <h2>Frontend Development</h2>
 
           <div className="experience__content">
             {
-              data.skills.filter(skill => skill.skillType === 'frontend').map(filteredSkill => {
+              data.skills.filter(skill => skill.skillType === 'frontend')
+              .sort((a, b) => a.importance - b.importance)
+              .map(filteredSkill => {
                 return (
                   <article className="experience__details">
                     <div>
@@ -52,7 +54,7 @@ const Experience = () => {
         </div>
 
         <div className="experience__backend">
-        <h3>Backend Development</h3>
+        <h2>Backend Development</h2>
           <div className="experience__content">
             {
               data.skills.filter(skill => skill.skillType === 'backend').map(filteredSkill => {

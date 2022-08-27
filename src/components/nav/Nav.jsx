@@ -34,13 +34,6 @@ const Nav = () => {
 
 
   return (
-    // <nav>
-    //   <Link to="home" spy={true} smooth={true} offset={-100} duration={500} ><AiTwotoneHome/></Link>
-    //   <Link to="about" spy={true} smooth={true} offset={-100} duration={500} ><FaUserAlt/></Link>
-    //   <Link to="experience" spy={true} smooth={true} offset={-100} duration={500}><MdWork/></Link>
-    //   <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} ><AiFillProject/></Link>
-    //   <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} ><RiMessage2Fill/></Link>
-    // </nav>
     <Fragment>
     <nav className={colorChange ? 'navColorChange' : ''}>
       <Link to="home" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <AiTwotoneHome/> : 'Home'}</Link>

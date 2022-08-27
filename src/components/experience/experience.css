@@ -15,17 +15,17 @@
 
 
 
-.experience__container > div h3 {
+.experience__container > div h2 {
   text-align: center;
   margin-bottom: 2rem;
   color: var(--color-primary);
-  text-decoration: underline;
 }
 
 .experience__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 2rem;
+  color: var(--color-dark);
 }
 
 .experience__details {

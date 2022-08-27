@@ -2,11 +2,14 @@ import React from 'react'
 import './header.css'
 import CTA from './CTA'
 import ME from '../../assets/headshot.png'
+import Nav from '../nav/Nav'
 
 const Header = () => {
   return (
 
     <header>
+
+      <Nav/>
       
       <div className="container header__container" id="home">
         <h5>Hello, I'm</h5>
