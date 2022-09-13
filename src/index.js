@@ -5,24 +5,9 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 const client = new ApolloClient({
-  uri: (process.env.REACT_APP_DANHAT_GQL_API + '/graphql'), 
+  uri: (process.env.REACT_APP_DANHAT_GQL_API_DEV + '/graphql'), 
   cache: new InMemoryCache()
 })
-
-
-// client
-//   .query({
-//     query: gql`
-//       query GetSkills {
-//         skills {
-//           name
-//           importance
-//           type
-//         }
-//       }
-//     `,
-//   })
-//   .then((result) => console.log(result))
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

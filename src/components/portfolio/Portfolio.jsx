@@ -1,11 +1,8 @@
 import React from 'react'
 import './portfolio.css'
-
-import GIF15 from '../../assets/15puzzle.gif'
-import PLACEHOLDERIMG from '../../assets/placeholder-image.png'
-import TWEETSIMG from '../../assets/twitter.png'
-import HUFFMANGIF from '../../assets/huffman.gif'
-
+import {useQuery, gql} from '@apollo/client'
+import {AdvancedImage} from '@cloudinary/react'
+import {Cloudinary} from '@cloudinary/url-gen'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,38 +12,31 @@ import 'swiper/css/pagination';
 import { Pagination } from "swiper";
 
 
-const projects = [
-  {
-    id: 1,
-    image: PLACEHOLDERIMG,
-    title: "Play Nanogram!",
-    github: "https://github/danhat",
-    demo: "https://github.com/danhat"
-  },
-  {
-    id: 2,
-    image: GIF15,
-    title: "15 Puzzle",
-    github: "https://github/danhat/15Puzzle",
-    notebook: "https://github.com/danhat/15Puzzle/blob/master/15puzzle.ipynb"
-  },
-  {
-    id: 3,
-    image: HUFFMANGIF,
-    title: "Huffman Coding",
-    github: "https://github.com/danhat/HuffmanCoding"
-  },
-  {
-    id: 4,
-    image: TWEETSIMG,
-    title: "Classifying Tweets",
-    github: "https://github.com/danhat/classifying_tweets",
-    notebook: "https://github.com/danhat/classifying_tweets/blob/main/tweets.ipynb"
+
+const GET_PROJECTS = gql`
+  query GetProjects {
+    projects {
+      title
+      importance
+      link
+      demo
+      hasSite
+      hasNotebook
+      hasVideo
+      projectImage
+    }
   }
-]
+`
 
 
 const Portfolio = () => {
+
+  const { loading, error, data } = useQuery(GET_PROJECTS);
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error</p>;
+
   return (
     <section id="portfolio">
       
@@ -74,22 +64,26 @@ const Portfolio = () => {
       >
 
         {
-          projects.map(({id, image, title, github, demo, notebook}) => {
+          data.projects.sort((a, b) => a.importance - b.importance)
+          .map(project => {
+            const cld = new Cloudinary({
+              cloud: {
+                cloudName: process.env.REACT_APP_DANHAT_CLOUDNAME
+              }
+            })
+
+            const myImage = cld.image(`danhat-api/${project.projectImage.filename}`)
             return (
-              <SwiperSlide key={id} className="portfolio__item">
+              <SwiperSlide key={project.id} className="portfolio__item">
                 <div className="portfolio__item-image">
-                  <img src={image} alt={title}/>
+                  <AdvancedImage cldImg={myImage}/>
                 </div>
-                <h3>{title}</h3>
+                <h3>{project.title}</h3>
                 <div className="portfolio__item-cta">
-                  <a href={github} className="btn btn-primary" target="_blank" rel="noreferrer">Github</a>
-                  {demo && <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">Live Demo</a>}
-                  {notebook && <a href={notebook} className="btn btn-primary" target="_blank" rel="noreferrer">Jupyter Notebook</a>}
-                  {/* <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">
-                    {demo ? "Live Demo" :
-                    notebook ? "Jupyter Notebook" :
-                    "Demo"}
-                  </a> */}
+                  <a href={project.link} className="btn btn-primary" target="_blank" rel="noreferrer">Repository</a>
+                  {project.hasSite === 'true' && <a href={project.demo} className="btn btn-primary" target="_blank" rel="noreferrer">Live Demo</a>}
+                  {project.hasNotebook === 'true' && <a href={project.demo} className="btn btn-primary" target="_blank" rel="noreferrer">Notebook</a>}
+                  {project.hasVideo === 'true' && <a href={project.demo} className="btn btn-primary" target="_blank" rel="noreferrer">Video</a>}
                 </div>
               </SwiperSlide>
             )
