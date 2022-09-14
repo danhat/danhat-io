@@ -5,7 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 const client = new ApolloClient({
-  uri: (process.env.REACT_APP_DANHAT_GQL_API_DEV + '/graphql'), 
+  uri: (process.env.REACT_APP_DANHAT_GQL_API + '/graphql'), 
   cache: new InMemoryCache()
 })
 

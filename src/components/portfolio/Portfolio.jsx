@@ -33,9 +33,9 @@ const Portfolio = () => {
 
   const { loading, error, data } = useQuery(GET_PROJECTS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) console.log('loading projects');
 
-  if (error) return <p>Error</p>;
+  if (error) console.log(error);
 
   return (
     <section id="portfolio">
