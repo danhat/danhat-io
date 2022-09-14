@@ -18,10 +18,8 @@ const GET_SKILLS = gql`
 
 const Experience = () => {
   const { loading, error, data } = useQuery(GET_SKILLS);
-
-  if (loading) console.log('loading skills');
-
-  if (error) console.log(error)
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error</p>
 
 
   return (

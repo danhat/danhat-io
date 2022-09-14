@@ -1,6 +1,6 @@
 import React from 'react'
 import './portfolio.css'
-import {useQuery, gql} from '@apollo/client'
+//import {useQuery, gql} from '@apollo/client'
 import {AdvancedImage} from '@cloudinary/react'
 import {Cloudinary} from '@cloudinary/url-gen'
 
@@ -13,29 +13,62 @@ import { Pagination } from "swiper";
 
 
 
-const GET_PROJECTS = gql`
-  query GetProjects {
-    projects {
-      title
-      importance
-      link
-      demo
-      hasSite
-      hasNotebook
-      hasVideo
-      projectImage
+// const GET_PROJECTS = gql`
+//   query GetProjects {
+//     projects {
+//       title
+//       importance
+//       link
+//       demo
+//       hasSite
+//       hasNotebook
+//       hasVideo
+//       projectImage
+//     }
+//   }
+// `
+
+const projects = [
+  {
+    id: 2,
+    title: "15 Puzzle",
+    language: "Python",
+    importance: "4",
+    description: "Python project blah blah blah",
+    link: "https://github.com/danhat/15Puzzle",
+    demo: "https://github.com/danhat/15Puzzle/blob/master/15puzzle.ipynb",
+    hasSite: "false",
+    hasVideo: "false",
+    hasNotebook: "true",
+    projectImage: {
+      filename: "15puzzle",
+      url: "https://res.cloudinary.com/daniellehat/image/upload/15puzzle.gif"
+    }
+  },
+  {
+    id: 3,
+    title: "Huffman Coding",
+    language: "Java",
+    importance: "5",
+    description: "Java project blah blah blah",
+    link: "https://github.com/danhat/HuffmanCoding",
+    demo: "https://github.com/danhat/HuffmanCoding",
+    hasSite: "false",
+    hasVideo: "true",
+    hasNotebook: "false",
+    projectImage: {
+      filename: "huffman",
+      url: "https://res.cloudinary.com/daniellehat/image/upload/huffman.gif"
     }
   }
-`
+]
 
 
 const Portfolio = () => {
 
-  const { loading, error, data } = useQuery(GET_PROJECTS);
-
-  if (loading) console.log('loading projects');
-
-  if (error) console.log(error);
+  // const { loading, error, data } = useQuery(GET_PROJECTS)
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error</p>
 
   return (
     <section id="portfolio">
@@ -64,7 +97,7 @@ const Portfolio = () => {
       >
 
         {
-          data.projects.sort((a, b) => a.importance - b.importance)
+          projects.sort((a, b) => a.importance - b.importance)
           .map(project => {
             const cld = new Cloudinary({
               cloud: {
