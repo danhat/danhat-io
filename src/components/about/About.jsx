@@ -60,8 +60,8 @@ const About = () => {
         >
           {
             data.map(({degree, experience, name, detail}, index) => {
-              const IconTag = React.createElement("FaAward", {className: "about__icon"});
-              console.log(IconTag)
+              //const IconTag = React.createElement("FaAward", {className: "about__icon"});
+              //console.log(IconTag)
               return (
                 <SwiperSlide id={name} key={index} className="about__card">
                   {degree && <FaAward className="about__icon"/>}
