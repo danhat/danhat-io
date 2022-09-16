@@ -26,6 +26,7 @@
   grid-template-columns: 1fr 1fr;
   row-gap: 2rem;
   color: var(--color-dark);
+  font-weight: 500;
 }
 
 .experience__details {

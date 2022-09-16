@@ -37,10 +37,11 @@ const Portfolio = () => {
     console.log(someData)
   })
   if (loading) return 'Loading'
-  if (error) return `${error}`
+  if (error) return `\n${error}`
+  const projects = data.projects.slice()
 
   return (
-    <section id="portfolio">
+    <section className='bg-dark' id="portfolio">
       
       <h2>Portfolio</h2>
       <h5>My Recent Work</h5>
@@ -66,7 +67,8 @@ const Portfolio = () => {
       >
 
         {
-          data.projects.sort((a, b) => a.importance - b.importance)
+          
+          projects.sort((a, b) => (a.importance) - (b.importance))
           .map(project => {
             const cld = new Cloudinary({
               cloud: {
@@ -74,7 +76,7 @@ const Portfolio = () => {
               }
             })
 
-            const myImage = cld.image(`danhat-api/${project.projectImage.filename}`)
+            const myImage = cld.image(`${process.env.REACT_APP_CLD_FOLDER}/${project.projectImage.filename}`)
             return (
               <SwiperSlide key={project.id} className="portfolio__item">
                 <div className="portfolio__item-image">

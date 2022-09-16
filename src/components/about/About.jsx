@@ -25,7 +25,7 @@ const data = [
     index: 2,
     experience: '<FaHospitalAlt className="about__icon"/>',
     name: 'Experience',
-    detail: '6+ year programming'
+    detail: '4+ year programming'
   }
   // {
   //   index: 3,
@@ -43,7 +43,7 @@ const data = [
 
 const About = () => {
   return (
-    <section id="about">
+    <section className='bg-dark' id="about">
       
       <h2>About Me</h2>
       <h5>Get to Know</h5>

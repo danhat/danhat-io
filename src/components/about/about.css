@@ -80,8 +80,7 @@ swiper-pagination-bullet, .swiper-pagination-bullet-active, .swiper-pagination-b
 
 @media screen and (max-width: 1024px) {
   .about__container {
-    grid-template-columns: 1fr;
-    gap: 0;
+    gap: 2;
   }
 
   .about__me {
@@ -96,6 +95,11 @@ swiper-pagination-bullet, .swiper-pagination-bullet-active, .swiper-pagination-b
 
 
 @media screen and (max-width: 600px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
   .about__me {
     width: 65%;
     margin: 0 auto 3rem;

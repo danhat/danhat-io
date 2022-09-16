@@ -7,20 +7,26 @@ import Nav from '../nav/Nav'
 const Header = () => {
   return (
 
-    <header>
+    <header className='bg-light'>
 
       <Nav/>
       
       <div className="container header__container" id="home">
-        <h5>Hello, I'm</h5>
-        <h1>Danielle Hatten</h1>
-        <h5 className="text-light">Web Developer</h5>
-        <CTA/>
+        
+          <div className="about_headshot">
+          <div className="me">
+            <img src={ME} alt="me"/>
+          </div>
+          </div>
 
-        <div className="me">
-          <img src={ME} alt="me"/>
-        </div>
-
+          <div className="about_details">
+          <h4>Hello, I'm</h4>
+          <h1>Danielle Hatten</h1>
+          <h5 className="text-light">Web Developer<br></br>Greater Chicago Area</h5>
+          <CTA/>
+          </div>
+        
+        
       </div>
 
     </header>

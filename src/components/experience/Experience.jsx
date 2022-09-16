@@ -22,13 +22,13 @@ const Experience = () => {
     console.log(someData)
   })
   if (loading) return 'Loading...'
-  if (error) return `${error}`
+  if (error) return `\n${error}`
 
 
   return (
-    <section id="experience">
+    <section className='bg-light' id="experience">
       
-      <h2>My Experience</h2>
+      <h2>Experience</h2>
       <h5>What Skills I Have</h5>
 
       <div className="container experience__container">
