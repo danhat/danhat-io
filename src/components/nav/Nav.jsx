@@ -38,8 +38,8 @@ const Nav = () => {
     <nav className={colorChange ? 'navColorChange' : ''}>
       <Link to="home" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <AiTwotoneHome/> : 'Home'}</Link>
       <Link to="about" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FaUserAlt/> : 'About'}</Link>
-      <Link to="experience" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <MdWork/> : 'Experience'}</Link>
-      <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <AiFillProject/> : 'Portfolio'}</Link>
+      <Link to="experience" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <AiFillProject/> : 'Skills'}</Link>
+      <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <MdWork/> : 'Portfolio'}</Link>
       <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <RiMessage2Fill/> : 'Contact'}</Link>
     </nav>
     </Fragment>

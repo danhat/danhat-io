@@ -3,7 +3,6 @@ footer {
   padding: 2rem 0;
   text-align: center;
   font-size: 0.9rem;
-  /* margin-top: 4rem; */
 }
 
 footer a {
@@ -52,6 +51,10 @@ footer a {
 
   .footer__socials {
     margin-bottom: 2.6rem;
+  }
+
+  .footer__copyright {
+    margin-bottom: 14vh;
   }
 }
 

@@ -84,7 +84,7 @@ h1 {
 
 section {
   /* margin-top: 8rem; */
-  min-height: 80vh;
+  min-height: 60vh;
   padding: 5rem;
 }
 
@@ -120,7 +120,7 @@ a {
   width: max-content;
   display: inline-block;
   color: var(color-primary);
-  padding: 0.75rem 1.2rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--border-radius);
   cursor: pointer;
   border: 1px solid var(--color-primary);
@@ -134,8 +134,6 @@ a {
   filter: var(--brighten);
   transform: scale(var(--scale));
 }
-
-
 
 
 .btn-primary {
@@ -163,6 +161,7 @@ img {
   section {
     /* margin-top: 6rem; */
     padding: 4rem;
+    min-height: 60vh;
   }
 }
 
