@@ -16,7 +16,9 @@
   border-radius: var(--border-radius);
   border: 1px solid transparent;
   text-align: center;
-  margin-right: 1.3rem !important;
+  margin-right: 2.6rem !important;
+  /* margin-right: 0rem !important;
+  margin-left: 0rem !important; */
 }
 
 
@@ -58,6 +60,10 @@
     justify-content: center;
   }
 
+  .portfolio__item {
+    margin-right: 1.3rem !important;
+  }
+
 }
 
 /*** media quieries (small devices) ***/
@@ -69,6 +75,10 @@
 
   .portfolio__container .swiper-wrapper {
     justify-content: left;
+  }
+
+  .portfolio__item {
+    margin-right: 2.6rem !important;
   }
 
 }
