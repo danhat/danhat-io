@@ -18,7 +18,7 @@ const GET_INFO = gql`
 const CTA = () => {
   const {loading, error, data} = useQuery(GET_INFO, {
     onCompleted: someData =>
-    console.log(someData)
+    console.log('info loaded')
   })
   if (loading) return 'Loading...'
   if (error) return `\n${error}`

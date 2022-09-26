@@ -23,7 +23,7 @@ const GET_INFO = gql`
 const Header = () => {
   const {loading, error, data} = useQuery(GET_INFO, {
     onCompleted: someData =>
-    console.log(someData)
+    console.log('header info loaded')
   })
   if (loading) return 'Loading...'
   if (error) return `\n${error}`

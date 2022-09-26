@@ -34,7 +34,7 @@ const Portfolio = () => {
 
   const {loading, error, data} = useQuery(GET_PROJECTS, {
     onCompleted: someData =>
-    console.log(someData)
+    console.log('portfolio data loaded')
   })
   if (loading) return 'Loading'
   if (error) return `\n${error}`
