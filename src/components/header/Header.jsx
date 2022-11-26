@@ -1,7 +1,6 @@
 import React from 'react'
 import './header.css'
 import CTA from './CTA'
-import ME from '../../assets/headshot.png'
 import Nav from '../nav/Nav'
 
 import {useQuery, gql} from '@apollo/client'

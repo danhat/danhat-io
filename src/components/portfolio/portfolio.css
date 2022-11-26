@@ -26,7 +26,6 @@
   border-radius: var(--border-radius);
   border: 1px solid transparent;
   text-align: center;
-  /* margin-right: 2.6rem !important; */
   margin-right: 1.3rem !important;
   margin-left: 1.3rem !important;
 }

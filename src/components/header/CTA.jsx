@@ -1,5 +1,4 @@
 import React from 'react'
-import CV from '../../assets/cv.pdf'
 
 import {useQuery, gql} from '@apollo/client'
 
@@ -30,7 +29,7 @@ const CTA = () => {
   return (
     <div className="cta">
       
-      <a href={info.cv.url} className='btn' target='_blank'>Download CV</a>
+      <a href={info.cv.url} className='btn' target='_blank' rel='noreferrer'>Download CV</a>
       <a href="#contact" className='btn btn-primary'>Message Me</a>
     </div>
   )
