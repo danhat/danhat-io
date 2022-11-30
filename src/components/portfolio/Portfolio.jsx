@@ -41,7 +41,7 @@ const Portfolio = () => {
   const projects = data.projects.slice()
 
   return (
-    <section className='bg-dark' id="portfolio">
+    <section className='bg-light' id="portfolio">
       
       <h2>Portfolio</h2>
       <h5>My Recent Work</h5>

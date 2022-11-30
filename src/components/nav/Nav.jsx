@@ -1,11 +1,9 @@
 import React from 'react'
 import {Link} from 'react-scroll'
 import './nav.css'
-import {AiTwotoneHome, AiFillProject} from 'react-icons/ai'
-import {FaUserAlt} from 'react-icons/fa'
-import {MdWork} from 'react-icons/md'
-import {RiMessage2Fill} from 'react-icons/ri'
 import {useState, useEffect, Fragment} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faUser, faList, faBriefcase, faMessage } from '@fortawesome/free-solid-svg-icons'
 
 
 const Nav = () => {
@@ -36,11 +34,11 @@ const Nav = () => {
   return (
     <Fragment>
     <nav className={colorChange ? 'navColorChange' : ''}>
-      <Link to="home" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <AiTwotoneHome/> : 'Home'}</Link>
-      <Link to="about" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FaUserAlt/> : 'About'}</Link>
-      <Link to="experience" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <AiFillProject/> : 'Skills'}</Link>
-      <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <MdWork/> : 'Portfolio'}</Link>
-      <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <RiMessage2Fill/> : 'Contact'}</Link>
+      <Link to="home" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faHouse} /> : 'Home'}</Link>
+      <Link to="about" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faUser} /> : 'About'}</Link>
+      <Link to="experience" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <FontAwesomeIcon icon={faList} /> : 'Skills'}</Link>
+      <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faBriefcase} /> : 'Portfolio'}</Link>
+      <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faMessage} /> : 'Contact'}</Link>
     </nav>
     </Fragment>
     
