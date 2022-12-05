@@ -36,7 +36,7 @@ const Portfolio = () => {
     onCompleted: someData =>
     console.log('portfolio data loaded')
   })
-  if (loading) return 'Loading'
+  if (loading) return ''
   if (error) return `\n${error}`
   const projects = data.projects.slice()
 

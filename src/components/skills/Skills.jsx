@@ -21,7 +21,7 @@ const Skills = () => {
     onCompleted: someData =>
     console.log('skill data loaded')
   })
-  if (loading) return 'Loading...'
+  if (loading) return ''
   if (error) return `\n${error}`
 
 

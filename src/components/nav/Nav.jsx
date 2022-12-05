@@ -36,8 +36,8 @@ const Nav = () => {
     <nav className={colorChange ? 'navColorChange' : ''}>
       <Link to="home" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faHouse} /> : 'Home'}</Link>
       <Link to="about" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faUser} /> : 'About'}</Link>
-      <Link to="experience" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <FontAwesomeIcon icon={faList} /> : 'Skills'}</Link>
       <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faBriefcase} /> : 'Portfolio'}</Link>
+      <Link to="skills" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <FontAwesomeIcon icon={faList} /> : 'Skills'}</Link>
       <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faMessage} /> : 'Contact'}</Link>
     </nav>
     </Fragment>

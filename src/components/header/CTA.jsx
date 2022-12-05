@@ -19,7 +19,7 @@ const CTA = () => {
     onCompleted: someData =>
     console.log('info loaded')
   })
-  if (loading) return 'Loading...'
+  if (loading) return ''
   if (error) return `\n${error}`
 
   const temp = data.infos.slice()

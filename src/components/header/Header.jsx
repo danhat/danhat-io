@@ -24,7 +24,7 @@ const Header = () => {
     onCompleted: someData =>
     console.log('header info loaded')
   })
-  if (loading) return 'Loading...'
+  if (loading) return ''
   if (error) return `\n${error}`
 
   const temp = data.infos.slice()
