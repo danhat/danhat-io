@@ -14,6 +14,7 @@ footer a {
   font-weight: 500;
   margin-bottom: 2rem;
   display: inline-block;
+  padding: 2rem;
 }
 
 
@@ -22,13 +23,13 @@ footer a {
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  padding-top: 1rem;
 }
 
 .footer__socials a {
-  background: var(--color-bg);
-  color: var(--color-black);
-  font-size: 1.5rem;
-  padding: 0.8rem;
+  background: var(--color-black);
+  color: var(--color-bg);
+  font-size: 3.5rem;
   border-radius: var(--border-radius);
   display: flex;
   transition: var(--transition);

@@ -1,6 +1,8 @@
 import React from 'react'
 import './footer.css'
-import {BsLinkedin, BsGithub} from 'react-icons/bs'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
   return (
@@ -8,8 +10,8 @@ const Footer = () => {
       <a href="/#" className='footer__logo'>danhat</a>
 
       <div className="footer__socials">
-        <a href="https://github.com/danhat" target="_blank" rel="noreferrer"><BsGithub/></a>
-        <a href="https://linkedin.com/in/danhat" target="_blank" rel="noreferrer"><BsLinkedin/></a>
+        <a href="https://github.com/danhat" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSquareGithub} /></a>
+        <a href="https://linkedin.com/in/danhat" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>
       </div>
 
       <div className='footer__copyright'>
