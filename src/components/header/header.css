@@ -6,6 +6,7 @@ header {
   overflow: hidden;
 }
 
+
 .header__container {
   text-align: center;
   /* height: 100%; */
@@ -89,7 +90,7 @@ header {
 /*** media quieries (small devices) ***/
 @media screen and (max-width: 600px) {
   header {
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
 
   .header__container {
