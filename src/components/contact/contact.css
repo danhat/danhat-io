@@ -24,7 +24,7 @@ input, textarea {
   width: 100%;
   padding: 1.5rem;
   border-radius: var(--border-radius);
-  background: transparent;
+  background: rgb(245, 245, 245);
   border: 2px solid var(--color-primary-variant);
   resize: none;
   font-family: 'Montserrat', sans-serif;

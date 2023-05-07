@@ -2,6 +2,10 @@ import React from 'react'
 import './skills.css'
 
 import {useQuery, gql} from '@apollo/client'
+import {AdvancedImage} from '@cloudinary/react'
+import {Cloudinary} from '@cloudinary/url-gen'
+import {Tooltip} from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 
 
@@ -11,6 +15,10 @@ const GET_SKILLS = gql`
       name
       importance
       skillType
+      skillImage {
+        filename
+        url
+      }
     }
   }
 `
@@ -29,48 +37,33 @@ const Skills = () => {
     <section className='bg-dark' id="skills">
       
       <h2>Skills</h2>
-      <h5>What Skills I Have</h5>
+      <h5>What Technologies I Use</h5>
 
       <div className="container skills__container">
-        <div className="skills__frontend">
-          <h2>Frontend Development</h2>
+        
+        {
+          data.skills.slice()
+          .sort((a, b) => a.importance - b.importance)
+          .map(filteredSkill => {
+            const cld = new Cloudinary({
+              cloud: {
+                cloudName: process.env.REACT_APP_DANHAT_CLOUDNAME
+              }
+            })
+            const myImage = cld.image(`${process.env.REACT_APP_CLD_FOLDER}/${filteredSkill.skillImage.filename}`)
+            return (
+              <div>
+              <div data-tooltip-id='my-tooltip' data-tooltip-content={filteredSkill.name}>
+              <AdvancedImage alt={filteredSkill.name} className="skill__image" cldImg={myImage}/>
+              
+              </div>
+              <Tooltip id='my-tooltip'/> 
 
-          <div className="skills__content">
-            {
-              data.skills.filter(skill => skill.skillType === 'frontend')
-              .sort((a, b) => a.importance - b.importance)
-              .map(filteredSkill => {
-                return (
-                  <article className="skills__details">
-                    <div>
-                      <h4>{filteredSkill.name}</h4>
-                    </div>
-                  </article>
-                )
-              })
-            }
-            
-            
-          </div>
-        </div>
+              </div>
+            )
+          })
+        }
 
-        <div className="skills__backend">
-        <h2>Backend Development</h2>
-          <div className="skills__content">
-            {
-              data.skills.filter(skill => skill.skillType === 'backend').map(filteredSkill => {
-                return (
-                  <article className="skills__details">
-                    <div>
-                      <h4>{filteredSkill.name}</h4>
-                    </div>
-                  </article>
-                )
-              })
-            }
-          </div>
-          
-        </div>
       </div>
     </section>
   )

@@ -27,18 +27,6 @@ const data = [
     name: 'Experience',
     detail: '4+ year programming'
   }
-  // {
-  //   index: 3,
-  //   icon: <FaAward className="about__icon"/>,
-  //   name: 'Clients',
-  //   detail: '100+ worldwide'
-  // },
-  // {
-  //   index: 4,
-  //   icon: <FaAward className="about__icon"/>,
-  //   name: 'Projects',
-  //   detail: '50+ completed'
-  // }
 ]
 
 const About = () => {
@@ -77,11 +65,6 @@ const About = () => {
         
         
 
-        {/* <article className="about__card">
-          <FaAward className="about__icon"/>
-          <h5>Bachelor of Science - Computer Science</h5>
-          <small>University of Illinois at Chicago</small>
-        </article> */}
       
 
         <div className="about__content">
@@ -96,37 +79,10 @@ const About = () => {
               )
             })
           } */}
-          {/* <div className="about__cards">
-            <article className="about__card">
-              <FaAward className="about__icon"/>
-              <h5>Bachelor of Science - Computer Science</h5>
-              <small>University of Illinois at Chicago</small>
-            </article>
-
-            <article className="about__card">
-              <FaAward className="about__icon"/>
-              <h5>Experience</h5>
-              <small>1+ Years Working</small>
-            </article>
-
-            <article className="about__card">
-              <FiUsers className="about__icon"/>
-              <h5>Clients</h5>
-              <small>...+ Worldwide</small>
-            </article>
-
-            <article className="about__card">
-              <VscFolderLibrary className="about__icon"/>
-              <h5>Projects</h5>
-              <small>...+ Completed</small>
-            </article>
-          </div> */}
+          
 
           <p>
-          I am a web developer in the Greater Chicago Area. I seek to put my 
-          reignited love of programming into learning and creating what’s new and 
-          diverse. <br/> <br/>In my spare time, I like to run, do yoga (beginner), watch 
-          horror movies or series, and cook/enjoy food with my family. 
+          I am a programmer in the Greater Chicago Area. 
 
           </p>
         </div>

@@ -59,7 +59,10 @@ const Header = () => {
           <h4>Hello, I'm</h4>
           <h1>Danielle Hatten</h1>
           {/* <h5 className="text-light">{info.intro}</h5> */}
-          <h5 className="text-light">Web Developer in the Greater Chicago Area</h5>
+          <br></br>
+          <h4 className="text-light">Programmer in the Greater Chicago Area</h4>
+          <h4 className="text-light">B.S. in Computer Science | University of Illinois at Chicago</h4>
+          <br></br>
           <CTA/>
           </div>
         

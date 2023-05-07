@@ -5,22 +5,26 @@ import {AdvancedImage} from '@cloudinary/react'
 import {Cloudinary} from '@cloudinary/url-gen'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from "swiper";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from "swiper";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCode, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
 
 const GET_PROJECTS = gql`
   query GetProjects {
     projects {
       title
+      description
       importance
       link
       demo
       hasSite
       hasNotebook
       hasVideo
+      tags
       projectImage {
         filename
         url
@@ -40,29 +44,33 @@ const Portfolio = () => {
   if (error) return `\n${error}`
   const projects = data.projects.slice()
 
+
+
   return (
     <section className='bg-light' id="portfolio">
       
       <h2>Portfolio</h2>
       <h5>My Recent Work</h5>
 
-      <Swiper className="container portfolio__container"
+      <div className="container portfolio__container">
+      <Swiper
         pagination={{
           dynamicBullets: true,
           clickable: true,
         }}
         breakpoints={{
           100: {
-            slidesPerView: 1
+            slidesPerView: 1,
           },
           600: {
             slidesPerView: 2
           },
-          1024: {
+          1030: {
             slidesPerView: 3
           }
         }}
         modules={[Pagination]}
+        slidesPerView={3}
         spaceBetween={40}
       >
 
@@ -76,25 +84,43 @@ const Portfolio = () => {
               }
             })
 
+
             const myImage = cld.image(`${process.env.REACT_APP_CLD_FOLDER}/${project.projectImage.filename}`)
             return (
               <SwiperSlide key={project.id} className="portfolio__item">
-                <div className="portfolio__item-image">
-                  <AdvancedImage cldImg={myImage}/>
+                <AdvancedImage className="portfolio__item-image" cldImg={myImage}/>
+                <div className="portfolio__item-link-group">
+                  <a href={project.link} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCode} /></a>
+                  <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faUpRightFromSquare} /></a>
+
+                  {/* {project.hasSite === 'true' && <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLink} /></a>}
+                  {project.hasNotebook === 'true' && <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faFileCode} /></a>}
+                  {project.hasVideo === 'true' && <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>} */}
+
                 </div>
-                <h3>{project.title}</h3>
-                <div className="portfolio__item-cta">
-                  <a href={project.link} className="btn btn-primary" target="_blank" rel="noreferrer">Repository</a>
-                  {project.hasSite === 'true' && <a href={project.demo} className="btn btn-primary" target="_blank" rel="noreferrer">Live Demo</a>}
-                  {project.hasNotebook === 'true' && <a href={project.demo} className="btn btn-primary" target="_blank" rel="noreferrer">Notebook</a>}
-                  {project.hasVideo === 'true' && <a href={project.demo} className="btn btn-primary" target="_blank" rel="noreferrer">Video</a>}
+                <div className="portfolio__item-overlay">
+                  <h3 className="portfolio__item-title">{project.title}</h3>
+                  <p className="portfolio__item-descr">{project.description}</p>
+
+                  <div className="portfolio__item-tags">
+                    {project.tags.map((tag, i) => 
+                      <p className='portfolio__item-tag' key={i} tag={tag}>
+                        {tag}
+                      </p>
+                    )}
+                  </div>
+                  
                 </div>
               </SwiperSlide>
+
+              
             )
           })
         }
 
       </Swiper>
+      </div>
+      
     
 
     </section>

@@ -7,6 +7,9 @@ import { faSquareGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 const Footer = () => {
   return (
     <footer>
+
+      <h1>"Dare to try."</h1>
+      
       <a href="/#" className='footer__logo'>danhat</a>
 
       <div className="footer__socials">

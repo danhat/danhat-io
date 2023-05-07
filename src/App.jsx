@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react'
 
 import Loader from './components/loader/Loader'
 import Header from './components/header/Header'
-import About from './components/about/About'
 import Portfolio from './components/portfolio/Portfolio'
 import Skills from './components/skills/Skills'
 import Contact from './components/contact/Contact'
@@ -29,9 +28,8 @@ const App = () => {
         ) : (
           <>
           <Header/>
-          <About/>
-          <Portfolio/>
           <Skills/>
+          <Portfolio/>
           <Contact/>
           <Footer/>
           </>
