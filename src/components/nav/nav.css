@@ -100,7 +100,9 @@ nav {
   .nav-logo {
     visibility: hidden !important;
     width: 0px;
+    padding: 0;
   }
+
   
 }
 
