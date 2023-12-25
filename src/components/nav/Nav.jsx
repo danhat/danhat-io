@@ -3,7 +3,7 @@ import {Link} from 'react-scroll'
 import './nav.css'
 import {useState, useEffect, Fragment} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faList, faBriefcase, faMessage, faBlog } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faBriefcase, faMessage, faBlog } from '@fortawesome/free-solid-svg-icons'
 
 
 
