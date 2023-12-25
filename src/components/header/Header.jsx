@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.css'
-import CTA from './CTA'
+// import CTA from './CTA'
 import Nav from '../nav/Nav'
 import ME from '../../assets/headshot.png'
 
@@ -63,7 +63,7 @@ const Header = () => {
           <h4 className="text-light">Programmer in the Greater Chicago Area</h4>
           <h4 className="text-light">B.S. in Computer Science | University of Illinois at Chicago</h4>
           <br></br>
-          <CTA/>
+          {/* <CTA/> */}
           </div>
         
         

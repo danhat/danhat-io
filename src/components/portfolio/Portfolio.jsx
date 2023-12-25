@@ -47,7 +47,7 @@ const Portfolio = () => {
 
 
   return (
-    <section className='bg-light' id="portfolio">
+    <section className='bg-dark' id="portfolio">
       
       <h2>Portfolio</h2>
       <h5>My Recent Work</h5>

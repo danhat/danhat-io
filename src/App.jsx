@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react'
 import Loader from './components/loader/Loader'
 import Header from './components/header/Header'
 import Portfolio from './components/portfolio/Portfolio'
-import Skills from './components/skills/Skills'
+import Blog from './components/blog/Blog'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 
@@ -28,8 +28,8 @@ const App = () => {
         ) : (
           <>
           <Header/>
-          <Skills/>
           <Portfolio/>
+          <Blog/>
           <Contact/>
           <Footer/>
           </>
