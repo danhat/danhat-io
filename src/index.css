@@ -14,18 +14,17 @@
 
 
 :root {
-  --color-bg: #f5f5f7;
-  --color-bg-variant: #9abbdc;
-  --color-primary: #101727;
-  --color-primary-variant: #989898;
-  --color-white: #fff;
-  --color-light: rgba(255, 255, 255, 0.6);
-  --color-black: #000;
-  --color-dark: #555555;
-  --color-text-highlight: #989898;
-
-  --color-bg-light: #f8f8f8;
+  --color-bg: #27262e;
+  --color-bg-variant: #1c1b22;
   
+  --color-primary: #302d57;
+  --color-primaryold: #2c2950;
+  --color-primary-variant: #5f5aa4;
+
+  --color-text: rgba(255, 255, 255, 0.629);
+  --color-text-highlight: #f5f5f5;
+
+  --button-text-color: #fff;
 
   --container-width-lg: 75%;
   --container-width-md: 90%;
@@ -40,9 +39,158 @@
 }
 
 
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #ebebeb;
+    --color-bg-variant: #d0d0d0;
+    
+    --color-primary: #2c2950;
+    --color-primary-variant: #5f5aa4;
+
+    --color-text: #565656;
+    --color-text-highlight: #272727;
+  }
+
+  .btn {
+    color: #dcdcdc !important;
+  }
+
+  footer {
+    color: var(--color-text);
+  }
+
+  .footer__socials a {
+    background: var(--color-bg-variant);
+    color: var(--color-primary);
+    font-size: 2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    transition: var(--transition);
+    transform-origin: center center;
+    filter: var(--dim);
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav-links a {
+      background: transparent;
+      padding: 0.9rem;
+      border-radius: var(--border-radius);
+      display: flex;
+      color: var(--color-bg);
+      font-size: 1.1rem;
+    }
+    
+    .nav-links a:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border: .1rem solid var(--color-primary-variant);
+    }
+    
+    .nav-links a.active {
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border: .1rem solid var(--color-primary-variant);
+    }
+  
+    
+  
+    .navColorChange {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .navColorChange .nav-links a.active {
+      color: var(--color-bg);
+    }
+  }
+} */
+
+
+[data-theme='light'] {
+  
+  --color-bg: #e5e5e5;
+  --color-bg-variant: #d0d0d0;
+  
+  --color-primary: #403b73;
+  --color-primary-variant: #5f5aa4;
+
+  --color-text: #565656;
+  --color-text-highlight: #272727;
+  
+
+  /* .btn {
+    color: #dcdcdc !important;
+  }
+
+  footer {
+    color: var(--color-text);
+  }
+
+  .footer__socials a {
+    background: var(--color-bg-variant);
+    color: var(--color-primary);
+    font-size: 2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    transition: var(--transition);
+    transform-origin: center center;
+    filter: var(--dim);
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav-links a {
+      background: transparent;
+      padding: 0.9rem;
+      border-radius: var(--border-radius);
+      display: flex;
+      color: var(--color-bg);
+      font-size: 1.1rem;
+    }
+    
+    .nav-links a:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border: .1rem solid var(--color-primary-variant);
+    }
+    
+    .nav-links a.active {
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border: .1rem solid var(--color-primary-variant);
+    }
+  
+    
+  
+    .navColorChange {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .navColorChange .nav-links a.active {
+      color: var(--color-bg);
+    }
+  } */
+}
+
+#underConstruction {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* padding: 12rem 1rem; */
+}
+
+
+
+.App {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 250ms ease-in-out;
+}
+
 html {
   scroll-behavior: smooth;
-  background: var(--color-bg);
+  /* background: var(--color-bg);
+  color: var(--color-text); */
 }
 
 
@@ -52,21 +200,15 @@ html {
 
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--color-black);
+  /* background: var(--color-bg) !important; */
+  /* color: var(--color-text);
+  font-family: 'Montserrat', sans-serif; */
   line-height: 1.7;
 }
 
-
-.bg-light {
-  /* background: #f8f8f8; */
-  background: #f5f5f7;
+.blur {
+  filter: blur(1rem) ;
 }
-
-.bg-dark {
-  background: #ededed;
-}
-
 
 .container {
   width: var(--container-width-lg);
@@ -75,6 +217,8 @@ body {
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  /* background-color: var(--color-bg);
+  background: var(--color-bg); */
 }
 
 @keyframes fadeInAnimation {
@@ -98,6 +242,7 @@ h1 {
 
 section {
   /* margin-top: 8rem; */
+  /* background-color: var(--color-bg); */
   min-height: 60vh;
   padding: 5rem;
 }
@@ -105,13 +250,10 @@ section {
 
 section > h2, section > h5 {
   text-align: center;
-  color: var(--color-dark);
+  margin-bottom: 4rem;
 }
 
-section > h2 {
-  color: var(--color-primary);
-  /* margin-bottom: 3rem; */
-}
+
 
 section > h5 {
   margin-bottom: 4.4rem;
@@ -119,13 +261,11 @@ section > h5 {
   font-weight: 600;
 }
 
-.text-light {
-  color: var(--color-dark);
-}
+
 
 
 a {
-  color: var(--color-primary);
+  color: var(--color-text-highlight);
   transition: var(--transition);
 }
 
@@ -134,27 +274,28 @@ a {
 .btn {
   width: max-content;
   display: inline-block;
-  color: var(color-primary);
   padding: 0.75rem 1rem;
-  border-radius: var(--border-radius);
   cursor: pointer;
-  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: var(--button-text-color);
+  border: .1rem solid var(--color-primary-variant);
+  border-radius: var(--border-radius);
   transition: var(--transition);
   transform-origin: center center;
-  filter: var(--dim);
+  /* filter: brightness(75%); */
 }
 
 
 .btn:hover {
-  filter: var(--brighten);
-  transform: scale(var(--scale));
+  background: var(--color-primary-variant);
+  /* filter: brightness(var(--brighten)); */
 }
 
 
-.btn-primary {
+/* .btn-primary {
   background: var(--color-primary);
-  color: var(--color-bg);
-}
+  color: var(--color-text-highlight);
+} */
 
 
 
