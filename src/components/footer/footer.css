@@ -1,15 +1,12 @@
 footer {
-  background: var(--color-primary);
+  background: var(--color-bg-variant);
   padding: 3rem;
   text-align: center;
+  color: var(--color-text);
 }
 
-footer a {
-  color: var(--color-bg);
-}
 
 footer h1 {
-  color: var(--color-bg);
   font-size: 1.3rem;
   font-style: italic;
   margin-bottom: 3rem;
@@ -31,8 +28,8 @@ footer h1 {
 }
 
 .footer__socials a {
-  background: var(--color-black);
-  color: var(--color-bg);
+  background: var(--color-bg-variant);
+  color: var(--color-text-highlight);
   font-size: 2rem;
   border-radius: var(--border-radius);
   display: flex;
@@ -48,7 +45,6 @@ footer h1 {
 
 .footer__copyright {
   margin-bottom: 0.1rem;
-  color: var(--color-bg);
 }
 
 

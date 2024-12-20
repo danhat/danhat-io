@@ -1,8 +1,7 @@
-import React from 'react'
 import './header.css'
-// import CTA from './CTA'
-import Nav from '../nav/Nav'
-import ME from '../../assets/headshot.png'
+// import React, { useRef, useState } from 'react'
+// import emailjs from 'emailjs-com'
+import CTA from './CTA'
 
 // import {useQuery, gql} from '@apollo/client'
 // import {AdvancedImage} from '@cloudinary/react'
@@ -41,29 +40,23 @@ const Header = () => {
 
   return (
 
-    <header className='bg-light'>
-
-      <Nav/>
+    <header>
       
       <div className="container header__container" id="home">
         
-          <div className="about_headshot">
-            <div className="me">
-              <img src={ME} alt="Danielle Hatten"/>
-              {/* <AdvancedImage cldImg={myImage}/> */}
-            </div>
           
-          </div>
 
           <div className="about_details">
-          <h4>Hello, I'm</h4>
-          <h1>Danielle Hatten</h1>
-          {/* <h5 className="text-light">{info.intro}</h5> */}
-          <br></br>
-          <h4 className="text-light">Programmer in the Greater Chicago Area</h4>
-          <h4 className="text-light">B.S. in Computer Science | University of Illinois at Chicago</h4>
-          <br></br>
-          {/* <CTA/> */}
+            <h4>Hello, I'm</h4>
+            <h1>Danielle Hatten</h1>
+            {/* <h5 className="text-light">{info.intro}</h5> */}
+            <br></br>
+            <h4>Programmer in the Greater Chicago Area</h4>
+            <h4>B.S. in Computer Science | University of Illinois at Chicago</h4>
+            <br></br>
+            <CTA/>
+
+            
           </div>
         
         

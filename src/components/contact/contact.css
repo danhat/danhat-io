@@ -1,7 +1,6 @@
-.container.contact__container {
+/* .container.contact__container {
   width: 58%;
   display: grid;
-  /* grid-template-columns: 30% 58%; */
   gap: 12%;
   padding-bottom: 4rem;
 }
@@ -33,21 +32,19 @@ input, textarea {
 
 
 
-/*** media quieries (medium devices) ***/
+
 @media screen and (max-width: 1024px) {
   .container.contact__container {
-    /* grid-template-columns: 1fr;
-    gap: 2rem; */
     width: var(--container-width-md);
   }
 }
 
-/*** media quieries (small devices) ***/
+
 @media screen and (max-width: 600px) {
   .container.contact__container {
     width: var(--container-width-sm);
   }
-}
+} */
 
 
 

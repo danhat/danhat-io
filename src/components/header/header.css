@@ -9,7 +9,6 @@ header {
 
 .header__container {
   text-align: center;
-  /* height: 100%; */
   min-height: 100vh;
   position: relative;
   display: grid;
@@ -18,20 +17,63 @@ header {
   gap: 2rem;
 }
 
-.about_headshot .me{
-  margin: 0;
-}
-
-
-
 
 /*** CTA ***/
-.cta {
-  padding-top: 2.5rem;
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
+
+
+
+
+.popup-inner {
+  background-color: var(--color-bg-variant);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.7rem;
+  border: none;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  width: 50%;
+  -webkit-transition:transform 200ms ease-in;
+  -moz-transition:transform 200ms ease-in;
+  -o-transition:transform 200ms ease-in;
+  transition:transform 200ms ease-in;
 }
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1.7rem;
+  cursor: pointer;
+}
+
+.popup-inner h3 {
+  margin: 1.5rem;
+}
+
+
+.popup-inner form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;  
+}
+
+.popup-inner input, .popup-inner textarea {
+  width: 100%;
+  padding: 1.5rem;
+  background: var(--color-bg) !important;
+  border-radius: var(--border-radius); 
+  resize: none;
+  color: var(--color-text);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.popup-inner button {
+  margin: 1rem 0rem;
+}
+
+
+
+
 
 
 /** header socials **/
@@ -66,7 +108,6 @@ header {
 
 
 
-
 /*** media quieries (medium devices) ***/
 @media screen and (max-width: 1024px) {
   header {
@@ -82,9 +123,6 @@ header {
     padding-top: 0 !important;
   }
 
-  .about_headshot {
-    padding: 1rem;
-  }
 }
 
 /*** media quieries (small devices) ***/

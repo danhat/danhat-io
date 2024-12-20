@@ -7,74 +7,8 @@
 
 
 
-.about__me {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: var(--border-radius);
-  background: var(--color-bg-variant);
-  display: grid;
-  place-items: center;
-
-}
-
-.about__me-image {
-  border-radius: var(--border-radius);
-  overflow: hidden;
-}
 
 
-.about__card-swiper {
-  width: 100%;
-  padding-bottom: 3rem !important;
-}
-
-swiper-pagination-bullet, .swiper-pagination-bullet-active, .swiper-pagination-bullet-active-main {
-  background: var(--color-primary) !important;
-}
-
-
-
-.about__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.about__card {
-  background: var(--color-bg-variant);
-  border: 1px solid transparent;
-  border-radius: var(--border-radius);
-  padding: 4rem;
-  text-align: center;
-  transition: var(--transition);
-}
-
-
-.about__icon {
-  color: var(--color-primary);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.about__card h5 {
-  font-size: 0.95rem;
-}
-
-.about__card small {
-  font-size: 0.7rem;
-  color: var(--color-dark);
-}
-
-.about__content {
-  text-align: center;
-}
-
-
-
-.about__content p {
-  margin: 2rem 0 2.6rem;
-  color: var(--color-dark);
-}
 
 
 
@@ -83,14 +17,6 @@ swiper-pagination-bullet, .swiper-pagination-bullet-active, .swiper-pagination-b
     gap: 2;
   }
 
-  .about__me {
-    width: 50%;
-    margin: 2rem auto 4rem;
-  }
-
-  .about__content p {
-    margin: 1rem 0 1.5rem;
-  }
 }
 
 
@@ -100,23 +26,6 @@ swiper-pagination-bullet, .swiper-pagination-bullet-active, .swiper-pagination-b
     gap: 0;
   }
 
-  .about__me {
-    width: 65%;
-    margin: 0 auto 3rem;
-  }
-
-  .about__cards {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .about__content {
-    text-align: center;
-  }
-
-  .about__content p {
-    margin: 1.5rem 0;
-  }
 }
 
 

@@ -5,12 +5,14 @@ import {AdvancedImage} from '@cloudinary/react'
 import {Cloudinary} from '@cloudinary/url-gen'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from "swiper";
+import { Pagination } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+
+
 
 
 const GET_PROJECTS = gql`
@@ -45,12 +47,12 @@ const Portfolio = () => {
   const projects = data.projects.slice()
 
 
-
   return (
-    <section className='bg-dark' id="portfolio">
+    <section id="portfolio">
       
-      <h2>Portfolio</h2>
-      <h5>My Recent Work</h5>
+      <h2>Recent Projects</h2>
+        
+    
 
       <div className="container portfolio__container">
       <Swiper
@@ -93,10 +95,7 @@ const Portfolio = () => {
                   <a href={project.link} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCode} /></a>
                   <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faUpRightFromSquare} /></a>
 
-                  {/* {project.hasSite === 'true' && <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLink} /></a>}
-                  {project.hasNotebook === 'true' && <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faFileCode} /></a>}
-                  {project.hasVideo === 'true' && <a href={project.demo} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>} */}
-
+                  
                 </div>
                 <div className="portfolio__item-overlay">
                   <h3 className="portfolio__item-title">{project.title}</h3>

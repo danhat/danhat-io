@@ -18,10 +18,10 @@ const Contact = () => {
   };
 
   return (
-    <section className='bg-dark' id="contact">
+    <section id="contact">
       
-      <h2>Contact</h2>
-      <h5>Send me a message about anything!</h5>
+      <h2>Send me a message about anything!</h2>
+      
 
       <div className="container contact__container">
         <form ref={form} onSubmit={sendEmail}>

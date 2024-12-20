@@ -18,14 +18,13 @@ const Blog = () => {
 
 
   return (
-    <section className='bg-light' id="blog">
+    <section id="blog">
       
-      <h2>Blog</h2>
-      <h5>Recent Writings</h5>
+      <h2>Recent Writings</h2>
       <br/>
-      <p>
-        <center>Under construction...</center>
-      </p>
+      
+      <center>Under construction...</center>
+      
 
 
       {/* <div className="container blog__container">

@@ -9,7 +9,7 @@ const IconLoader = () => (
       
       
       <path id="D"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -20,7 +20,7 @@ const IconLoader = () => (
            "
       />
       <path id="A"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -31,7 +31,7 @@ const IconLoader = () => (
            "
       />
       <path id="N"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -41,7 +41,7 @@ const IconLoader = () => (
            "
       />
       <path id="H"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -51,7 +51,7 @@ const IconLoader = () => (
            "
       />
       <path id="A2"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -62,7 +62,7 @@ const IconLoader = () => (
            "
       />
       <path id="T"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -72,7 +72,7 @@ const IconLoader = () => (
            "
       />
       <path id="TT"
-        stroke="#101727"
+        stroke="var(--color-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

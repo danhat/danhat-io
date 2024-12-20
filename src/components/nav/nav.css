@@ -1,7 +1,6 @@
 
 
 nav {
-  background-color: var(--color-bg);
   position: fixed;
   height: 6rem;
   width: 100%;
@@ -12,7 +11,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 3rem; */
+  
   padding: 1rem 3rem;
   -webkit-transition:height 200ms ease-in;
   -moz-transition:height 200ms ease-in;
@@ -26,10 +25,16 @@ nav {
   font-weight: 500;
   padding: 2rem;
   cursor: pointer;
+  justify-self: left !important;
+  visibility: hidden;
 }
+
+
+
 
 .nav-logo svg {
   width: 8rem;
+  /* text-shadow: none; */
 }
 
 
@@ -39,31 +44,50 @@ nav {
 }
 
 
+#logo-path {
+  stroke: var(--color-primary);
+  /* fill: transparent; */
+  /* stroke-width: 3; */
+  /* stroke-linecap: round; */
+  /* stroke-linejoin: round; */
+}
+
+
 
 .nav-links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end !important;
   gap: 3rem;
   padding: 1rem 3rem;
-  
+  font-size: 1rem;;
 }
 
 .nav-links a {
   cursor: pointer;
-  font-weight: 450;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
-.nav-links a:hover {
-  color: var(--color-bg-variant);
+.nav-links a:hover, .nav-button button:hover {
+  color: var(--color-text-highlight);
 }
 
-.nav-logo {
-  justify-self: left !important;
-  visibility: hidden;
+.nav-button {
+  display: flex;
+  justify-content: flex-end !important;
+  padding-left: 3rem;
 }
+
+.nav-button button {
+  background: none;
+  color: var(--color-text);
+}
+
+
+
 
 .navColorChange {
-  background-color: var(--color-primary);
+  background-color: var(--color-bg-variant);
   height: 5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -73,23 +97,33 @@ nav {
   transition:height 200ms ease-in;
 }
 
-.navColorChange .nav-links a {
+
+
+/* .navColorChange .nav-links a {
   color: var(--color-bg);
-}
+} */
 
 .navColorChange .nav-links a:hover {
-  color: var(--color-light);
   cursor: pointer;
 }
 
 .navColorChange .nav-links a.active {
-  color: var(--color-bg-variant);
+  color: var(--color-primary-variant);
 }
 
-.navColorChange .nav-logo {
+.navColorChange .nav-logo{
   visibility: visible;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
+
+
+
+
+
 
 
 @media screen and (max-width: 1024px) {
@@ -102,17 +136,17 @@ nav {
     width: 0px;
     padding: 0;
   }
-
   
 }
 
 
 @media screen and (max-width: 600px) {
+  
   nav {
     background: rgba(0, 0, 0, 0.2);
     width: 90%;
     display: block;
-    height: 4.5rem;
+    height: 5rem;
     padding: 0.7rem 1.7rem;
     z-index: 2;
     position: fixed;
@@ -121,10 +155,11 @@ nav {
     transform: translateX(-50%);
     bottom: 2rem;
     display: flex;
-    /* gap: 0.8rem; */
     border-radius: var(--border-radius);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(0.2rem);
   }
+
+  
 
   .nav-links {
     gap: 0.8rem;
@@ -135,36 +170,30 @@ nav {
     padding: 0.9rem;
     border-radius: var(--border-radius);
     display: flex;
-    color: var(--color-white);
+    color: var(--color-text-highlight);
     font-size: 1.1rem;
   }
   
   .nav-links a:hover {
-    background: var(--color-light);
-    border: 2px solid var(--color-bg-variant);
+    background: var(--color-text-highlight);
+    color: var(--color-bg);
+    border: .1rem solid var(--color-primary-variant);
   }
   
   .nav-links a.active {
     background: var(--color-primary);
-    color: var(--color-white);
-    border: 2px solid var(--color-bg-variant);
+    color: var(--color-text-highlight);
+    border: .1rem solid var(--color-primary-variant);
   }
+
+  
 
   .navColorChange {
     background: rgba(0, 0, 0, 0.2);
-    height: 5rem;
-  }
-  
-  .navColorChange .nav-links a {
-    color: var(--color-white);
-  }
-
-  .navColorChange .nav-links a:hover {
-    color: var(--color-bg-variant);
   }
   
   .navColorChange .nav-links a.active {
-    color: var(--color-white);
+    color: var(--color-text-highlight);
   }
 
 }

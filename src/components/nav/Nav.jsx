@@ -2,12 +2,25 @@ import React from 'react'
 import {Link} from 'react-scroll'
 import './nav.css'
 import {useState, useEffect, Fragment} from 'react'
+import {useMediaQuery} from 'react-responsive'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faBriefcase, faMessage, faBlog } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faBriefcase, faMessage, faBlog, faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons'
+import Toggle from '../toggle/Toggle'
 
 
 
-const Nav = () => {
+const Nav = ({isDark, setIsDark}) => {
+  // const systemPrefersLight = useMediaQuery (
+  //   {
+  //     query: '(prefers-color-scheme: light)', 
+  //   },
+  //   undefined, 
+  //   (isSystemLight) => setIsLight(isSystemLight)
+  // )
+
+
+  
+
 
   const [isSmall, setSmall] = useState(window.innerWidth <= 600);
 
@@ -22,8 +35,10 @@ const Nav = () => {
 
 
 
+
+
   const [colorChange, setColorchange] = useState(false);
-  const changeNavbarColor = () =>{
+  const changeNavbarColor = () => {
      if(window.scrollY >= 80){
        setColorchange(true);
      }
@@ -32,6 +47,7 @@ const Nav = () => {
      }
   };
   window.addEventListener('scroll', changeNavbarColor);
+  
 
 
 
@@ -40,10 +56,11 @@ const Nav = () => {
     <Fragment>
     <nav className={colorChange ? 'navColorChange' : ''}>
       <Link className='nav-logo' to='home' spy={false} smooth={true} offset={-100} duration={500}>
-      <svg width='100' height='100'xmlns="http://www.w3.org/2000/svg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox='5 29 115 64'>
         <g>
-          <path id="D"
-            stroke="#fff"
+          <path id="D logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -53,8 +70,9 @@ const Nav = () => {
               C 5,46.5 5,58 20,58
               "
           />
-          <path id="A"
-            stroke="#fff"
+          <path id="A logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -64,8 +82,9 @@ const Nav = () => {
               C 23.5,59 23.5,53 35,53
               "
           />
-          <path id="N"
-            stroke="#fff"
+          <path id="N logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -74,8 +93,9 @@ const Nav = () => {
               C 41,44 53.5,44 51,59
               "
           />
-          <path id="H"
-            stroke="#fff"
+          <path id="H logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -84,8 +104,9 @@ const Nav = () => {
               C 56,44 68.5,44 66,59
               "
           />
-          <path id="A2"
-            stroke="#fff"
+          <path id="A2 logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -95,8 +116,9 @@ const Nav = () => {
               C 68.5,58 68.5,53 80,53
               "
           />
-          <path id="T"
-            stroke="#fff"
+          <path id="T logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -105,8 +127,9 @@ const Nav = () => {
               C 89,59 93,59 95,58.8
               "
           />
-          <path id="TT"
-            stroke="#fff"
+          <path id="TT logo-path"
+            stroke="var(--color-text)"
+            fill="transparent"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -118,15 +141,21 @@ const Nav = () => {
       </svg>
       </Link>
 
+      
+
       <div className='nav-links'>
         <Link to="home" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faHouse} /> : 'Home'}</Link>
         {/* <Link to="about" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faUser} /> : 'About'}</Link> */}
-        {/* <Link to="skills" spy={true} smooth={true} offset={-100} duration={500}>{isSmall ? <FontAwesomeIcon icon={faList} /> : 'Skills'}</Link> */}
         <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faBriefcase} /> : 'Portfolio'}</Link>
         <Link to="blog" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faBlog} /> : 'Blog'}</Link>
         <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} >{isSmall ? <FontAwesomeIcon icon={faMessage} /> : 'Contact'}</Link>
-      </div>
+        <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)}/>
+        
+      </div>      
+     
+      
     </nav>
+    
     </Fragment>
     
   )
